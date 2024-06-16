@@ -14,3 +14,6 @@ vim.opt.pumheight = 10 -- pop up menu height
 -- Enable persistent undo
 vim.opt.undofile = true
 
+-- Enable spell checking
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
