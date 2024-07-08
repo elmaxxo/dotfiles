@@ -87,6 +87,17 @@ local plugins = {
     opts = function()
       return require "custom.configs.cmp"
     end,
+  },
+  {
+    "APZelos/blamer.nvim",
+    lazy = false,
+    init = function()
+      vim.g.blamer_show_in_visual_modes = false
+      vim.g.blamer_show_in_insert_modes  = false
+      vim.g.blamer_relative_time = true
+      vim.g.blamer_enabled = true
+    end
   }
+
 }
 return plugins
