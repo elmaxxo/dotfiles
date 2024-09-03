@@ -49,15 +49,15 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end
   },
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^4",
-    ft = { "rust" },
-    dependencies = "neovim/nvim-lspconfig",
-    config = function()
-      require "custom.configs.rustaceanvim"
-    end
-  },
+  -- {
+  --   "mrcjkb/rustaceanvim",
+  --   version = "^4",
+  --   ft = { "rust" },
+  --   dependencies = "neovim/nvim-lspconfig",
+  --   config = function()
+  --     require "custom.configs.rustaceanvim"
+  --   end
+  -- },
   -- TODO: setup debugging
   -- {
   --   "jay-babu/mason-nvim-dap.nvim",
@@ -76,12 +76,6 @@ local plugins = {
   --     require("core.utils").load_mappings("dap")
   --   end
   -- },
-  -- auto-cd to root of git project
-  {
-    'notjedi/nvim-rooter.lua',
-    lazy = false, -- NOTE: avoid lazy loading as the autocmds may not be caught by nvim-rooter.lua.
-    config = function() require('nvim-rooter').setup() end
-  },
   {
     "hrsh7th/nvim-cmp",
     opts = function()
@@ -97,7 +91,21 @@ local plugins = {
       vim.g.blamer_relative_time = true
       vim.g.blamer_enabled = true
     end
-  }
-
+  },
+  {
+    "pest-parser/pest.vim",
+    lazy=false,
+    config = function() require('pest-vim').setup {} end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy=false,
+    config = function() 
+      require'treesitter-context'.setup {
+        max_lines = 4,
+        trim_scope = 'inner',
+        multiline_threshold = 1,
+    } end,
+  },
 }
 return plugins

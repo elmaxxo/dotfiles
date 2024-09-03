@@ -13,6 +13,15 @@ lspconfig.lua_ls.setup({
   capabilities = capabilities,
 })
 
+lspconfig.rust_analyzer.setup({
+  on_attach = function(client, bufnr)
+    -- disable semantic highlighting
+    client.server_capabilities.semanticTokensProvider = nil
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+})
+
 lspconfig.clangd.setup {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
