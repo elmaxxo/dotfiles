@@ -49,37 +49,23 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end
   },
-  -- {
-  --   "mrcjkb/rustaceanvim",
-  --   version = "^4",
-  --   ft = { "rust" },
-  --   dependencies = "neovim/nvim-lspconfig",
-  --   config = function()
-  --     require "custom.configs.rustaceanvim"
-  --   end
-  -- },
-  -- TODO: setup debugging
-  -- {
-  --   "jay-babu/mason-nvim-dap.nvim",
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     "williamboman/mason.nvim",
-  --     "mfussenegger/nvim-dap",
-  --   },
-  --   opts = {
-  --     handlers = {} -- default
-  --   },
-  -- },
-  -- {
-  --   "mfussenegger/nvim-dap",
-  --   init = function()
-  --     require("core.utils").load_mappings("dap")
-  --   end
-  -- },
   {
     "hrsh7th/nvim-cmp",
     opts = function()
       return require "custom.configs.cmp"
+    end,
+  },
+  -- inline function signatures
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    config = function(_, opts) 
+      require "lsp_signature".setup({
+				doc_lines = 0,
+				handler_opts = {
+					border = "none"
+				},
+      })
     end,
   },
   {

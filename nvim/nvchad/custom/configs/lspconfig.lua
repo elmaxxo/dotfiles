@@ -20,6 +20,18 @@ lspconfig.rust_analyzer.setup({
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      imports = {
+        group = {
+          enable = false,
+        },
+      },
+      cargo = {
+        features = "all",
+      },
+    },
+  },
 })
 
 lspconfig.clangd.setup {
