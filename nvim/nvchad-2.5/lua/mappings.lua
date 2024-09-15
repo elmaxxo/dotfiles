@@ -15,6 +15,7 @@ map({"n", "i", "v"}, "<C-s>", "<cmd> w <cr>")
 map("n", "<leader>s", "<cmd>w<cr>", { desc = "Save" })
 map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 map("n", "<leader>s", "<cmd>w<cr>", { desc = "Save" })
+map("n", "<C-s>", "<cmd>w<cr>", { desc = "Save" })
 
 -- some faster movement
 map({"n", "v"}, "<C-l>", "$")
@@ -32,4 +33,3 @@ map("n", "<leader>ls", "<leader>ld", { desc = "Show diagnostic" })
 
 map("v", "<S-Tab>", "<gv", { desc = "Unindent line" })
 map("v", "<Tab>", ">gv", { desc = "Indent line" })
-
