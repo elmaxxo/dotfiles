@@ -26,8 +26,7 @@ map({"n", "v"}, "<C-k>", "8k")
 -- telescope
 local telescope = require("telescope.builtin")
 map("n", "<leader>b", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
-map("n", "gr", function() telescope.lsp_references() end, { desc = "LSP references" })
-map("n", "gd",function() telescope.lsp_definitions() end, { desc = "LSP definitions" })
+map("n", "<leader>gr", function() telescope.lsp_references() end, { desc = "LSP references", remap=true })
 
 map("n", "<leader>ls", "<leader>ld", { desc = "Show diagnostic" })
 

@@ -13,9 +13,6 @@ M.ui = {
     Comment = { link = "Special" },
     rustIdentifier = { fg = "white" },
   },
-  statusline = {
-    theme = "vscode_colored",
-  },
 }
 
 M.base46 = {
