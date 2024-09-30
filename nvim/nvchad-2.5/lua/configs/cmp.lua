@@ -15,6 +15,7 @@ options = {
       end,
     },
     { name = "path" },
+    { name = "nvim_lsp_signature_help" },
   },
   mapping = {
     ["<C-p>"] = cmp.mapping.select_prev_item(),

@@ -36,19 +36,19 @@ return {
       return require "configs.cmp"
     end,
   },
-  -- inline function signatures
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
-    config = function(_, opts) 
-      require "lsp_signature".setup({
-				doc_lines = 0,
-				handler_opts = {
-					border = "none"
-				},
-      })
-    end,
-  },
+  -- -- inline function signatures
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "VeryLazy",
+  --   config = function(_, opts) 
+  --     require "lsp_signature".setup({
+  -- 		doc_lines = 0,
+  -- 		handler_opts = {
+  -- 			border = "none"
+  -- 		},
+  --     })
+  --   end,
+  -- },
   {
     "rust-lang/rust.vim",
     ft = { "rust" },
